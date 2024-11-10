@@ -1,6 +1,6 @@
 <template>
     <button class="button">
-        <img src="C:\Users\Arjun\Desktop\fi_bot\vue-project\src\assets\Vector.png" alt="" class="logo">
+        <img src="\src\assets\Vector.png" alt="" class="logo">
         <label class="butla" >{{ label }}</label>
     </button>
 </template>

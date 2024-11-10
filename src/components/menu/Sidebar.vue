@@ -1,47 +1,59 @@
 <template>
-    <div class="col1">
-        <div class="col2">
-            <div class="card1":style="{
-                gap: was ? '40px' : '2px'
-            }">
-                <img src="C:\Users\Arjun\Desktop\fi_bot\vue-project\src\assets\Ellipse 12.png" alt="">
-                <p v-if="was">Kate Russel</p>
-                <select name="name" id="name" class="border-white">
-                </select>
-            </div>
-            <Search />
-            <p class="text-gray-500">Home</p>
-            <Sbcard :label="was ? 'Chatbots' : ''"/>
 
-            <div class="mt-[80px] mb-[15px] border-t w-full">
-                <p class="text-[14px] text-gray-500 pl-[11px]">Preferences</p>
-                <Button :pt="{
-                    //   root: '!bg-red-500 !border-blue-500',
-                    label: 'text-[14px] text-black',
-                    icon: 'text-black'
-                    // OR { class: 'text-xl' }
-                }" icon="pi pi-cog" aria-label="Save" label="Settings" class="!bg-white !border-transparent" /><br>
-                <Button :pt="{
-                    //   root: '!bg-red-500 !border-blue-500',
-                    label: 'text-[14px] text-black',
-                    icon: 'text-black'
-                    // OR { class: 'text-xl' }
-                }" icon="pi pi-question-circle" aria-label="Save" label="Help Center" class="!bg-white !border-transparent" /><br>
-                <Button :pt="{
-                    //   root: '!bg-red-500 !border-blue-500',
-                    label: 'text-[14px] text-black',
-                    icon: 'text-black'
-                    // OR { class: 'text-xl' }
-                }" icon="pi pi-sign-out" aria-label="Save" label="Logout" class="!bg-white !border-transparent" /><br>
-                <div class="flex flex-row justify-between p-[10px] border-2 rounded-[12px] items-center bg-gray-200">
-                    <span class="pi pi-moon"></span>
-                    <p class="text-[14px]">Dark Mode</p>
-                <ToggleSwitch  v-model="checked" class="" />
-            </div>
-            </div>
+    <div class="column h-full relative" :style="{
+        width: was ? '276px' : '100px'
+    }">
+        <Logo_head :is="is" />
+        <div class="col1">
+            <div class="col2">
+                <div class="card1" :style="{
+                    gap: was ? '40px' : '2px'
+                }">
+                    <img src="\src\assets\Ellipse 12.png" alt="">
+                    <p v-if="was">Kate Russel</p>
+                    <select name="name" id="name" class="border-white bg-white">
+                    </select>
+                </div>
+                <Search :class="was ? 'w-full' : 'w-[1px]'" />
+                <p class="text-gray-500">Home</p>
+                <Sbcard :label="was ? 'Chatbots' : ''" />
 
+                <div class="mt-[80px] mb-[15px] border-t w-full">
+                    <p class="text-[14px] text-gray-500 pl-[11px] absolute top-[355px] left-[8px]"
+                        :class="was ? 'top-[355px] left-[8px]' : 'top-[355px] left-[-4px]'">Preferences</p>
+                    <Button :pt="{
+                        //   root: '!bg-red-500 !border-blue-500',
+                        label: 'text-[14px] text-black',
+                        icon: 'text-black'
+                        // OR { class: 'text-xl' }
+                    }" icon="pi pi-cog" aria-label="Save" class="!bg-white !border-transparent"
+                        :label="was ? 'Settings' : ''" /><br>
+                    <Button :pt="{
+                        //   root: '!bg-red-500 !border-blue-500',
+                        label: 'text-[14px] text-black',
+                        icon: 'text-black'
+                        // OR { class: 'text-xl' }
+                    }" icon="pi pi-question-circle" aria-label="Save" class="!bg-white !border-transparent"
+                        :label="was ? 'Help Center' : ''" /><br>
+                    <Button :pt="{
+                        //   root: '!bg-red-500 !border-blue-500',
+                        label: 'text-[14px] text-black',
+                        icon: 'text-black'
+                        // OR { class: 'text-xl' }
+                    }" icon="pi pi-sign-out" aria-label="Save" class="!bg-white !border-transparent"
+                        :label="was ? 'Logout' : ''" /><br>
+                    <div
+                        class="flex flex-row justify-between p-[10px] border-2 rounded-[12px] items-center bg-gray-200">
+                        <span class="pi pi-moon"></span>
+                        <p class="text-[14px]" v-if="was">Dark Mode</p>
+                        <ToggleSwitch v-model="checked" class="" v-if="was" />
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
+
 </template>
 
 
@@ -52,13 +64,17 @@ import Search from './Search.vue';
 import Sbcard from './Sbcard.vue';
 import Button from 'primevue/button';
 import ToggleSwitch from 'primevue/toggleswitch';
-import { inject, provide,ref} from 'vue';
+import { inject, provide, ref } from 'vue';
+import Logo_head from '../logo/Logo_head.vue';
 
 
-const was = inject('is')
-// const where = computed(() => was.value);
+const was = ref(true)
+function toggle() {
+    was.value = !was.value
+}
 
-console.log('asddas',was)
+provide('clicker', toggle)
+// provide('is', was)
 
 </script>
 <style scoped>
@@ -93,5 +109,17 @@ console.log('asddas',was)
     padding: 10px 1px;
     border-color: #E6E7EC;
     border-radius: 10px;
+}
+
+.column {
+    width: 276px;
+    border: 1px solid;
+    border-color: #EDEEF3;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    /* margin-left: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px; */
+
 }
 </style>

@@ -2,7 +2,7 @@
     <div class="card flex flex-wrap justify-center gap-4">
         <IconField class="search">
             <InputIcon class="pi pi-search" />
-            <InputText v-model="value1" placeholder="Search" class="box" />
+            <InputText v-model="value1" placeholder="Search" class="box !bg-white !border-[#E6E7EC]" />
         </IconField>
 
     

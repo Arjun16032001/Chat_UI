@@ -2,7 +2,7 @@
   <div class="top public-sans">
     <div>
       <img
-        src="C:\Users\Arjun\Desktop\fi_bot\vue-project\src\assets\Objects.png"
+        src="\src\assets\Objects.png"
         alt=""
       />
     </div>
