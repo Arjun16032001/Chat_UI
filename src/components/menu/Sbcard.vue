@@ -1,15 +1,18 @@
 <template>
-    <button class="button">
+    <button class="button" >
         <img src="\src\assets\Vector.png" alt="" class="logo">
         <label class="butla" >{{ label }}</label>
     </button>
 </template>
 
 <script setup>
+import { inject, ref } from 'vue';
+import { provide } from 'vue';
 
 const {label} = defineProps({
     label : {}
 })
+
 
 </script>
 <style scoped>
@@ -19,7 +22,6 @@ const {label} = defineProps({
     border: 2px solid;
     border-color: #7152F3;
     border-radius: 12px;
-    width: 100%;
     display: flex;
     gap: 5px;
     padding: 6px 10px;

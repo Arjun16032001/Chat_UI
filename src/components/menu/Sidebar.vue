@@ -3,48 +3,51 @@
     <div class="column h-full relative" :style="{
         width: was ? '276px' : '100px'
     }">
-        <Logo_head :is="is" />
+        <Logo_head :was="was" />
         <div class="col1">
             <div class="col2">
                 <div class="card1" :style="{
-                    gap: was ? '40px' : '2px'
+                    gap: was ? '28px' : '0px'
                 }">
-                    <img src="\src\assets\Ellipse 12.png" alt="">
+                    <img src="\src\assets\Ellipse 12.png" alt="" class="w-[40px] h-[40px]">
+                    <div class="flex flex-col">
                     <p v-if="was">Kate Russel</p>
+                    <p v-if="was" class="text-[14px] font-[400] text-[#83899F]">Project Manager</p>
+                </div>
                     <select name="name" id="name" class="border-white bg-white">
                     </select>
                 </div>
-                <Search :class="was ? 'w-full' : 'w-[1px]'" />
+                <Search :class="was ? 'w-full' : 'w-[10px]'" />
                 <p class="text-gray-500">Home</p>
-                <Sbcard :label="was ? 'Chatbots' : ''" />
+                <Sbcard :label="was ? 'Chatbots' : ''" :class="was? 'w-[full]':'w-[44px]'" />
 
-                <div class="mt-[80px] mb-[15px] border-t w-full">
+                <div class="mt-[159px] mb-[15px] border-t w-full">
                     <p class="text-[14px] text-gray-500 pl-[11px] absolute top-[355px] left-[8px]"
-                        :class="was ? 'top-[355px] left-[8px]' : 'top-[355px] left-[-4px]'">Preferences</p>
+                        :class="was ? 'top-[435px] left-[8px]' : 'top-[435px] left-[-5px]'">Preferences</p>
                     <Button :pt="{
                         //   root: '!bg-red-500 !border-blue-500',
                         label: 'text-[14px] text-black',
-                        icon: 'text-black'
+                        icon: was ? '!text-black !text-[16px]' : '!text-black !text-[24px]'
                         // OR { class: 'text-xl' }
                     }" icon="pi pi-cog" aria-label="Save" class="!bg-white !border-transparent"
                         :label="was ? 'Settings' : ''" /><br>
                     <Button :pt="{
                         //   root: '!bg-red-500 !border-blue-500',
                         label: 'text-[14px] text-black',
-                        icon: 'text-black'
+                       icon: was ? '!text-black !text-[16px]' : '!text-black !text-[24px]'
                         // OR { class: 'text-xl' }
                     }" icon="pi pi-question-circle" aria-label="Save" class="!bg-white !border-transparent"
                         :label="was ? 'Help Center' : ''" /><br>
                     <Button :pt="{
                         //   root: '!bg-red-500 !border-blue-500',
                         label: 'text-[14px] text-black',
-                        icon: 'text-black'
+                        icon: was ? '!text-black !text-[16px]' : '!text-black !text-[24px]'
                         // OR { class: 'text-xl' }
                     }" icon="pi pi-sign-out" aria-label="Save" class="!bg-white !border-transparent"
                         :label="was ? 'Logout' : ''" /><br>
-                    <div
+                    <div v-if="was"
                         class="flex flex-row justify-between p-[10px] border-2 rounded-[12px] items-center bg-gray-200">
-                        <span class="pi pi-moon"></span>
+                        <span class="pi pi-moon" ></span>
                         <p class="text-[14px]" v-if="was">Dark Mode</p>
                         <ToggleSwitch v-model="checked" class="" v-if="was" />
                     </div>

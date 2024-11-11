@@ -7,7 +7,7 @@
       />
     </div>
     <div class="heading flex flex-row">
-      <div v-if="props.is">
+      <div v-if="props.was">
         <h2 class="logo_head">CHAT</h2>
         <p class="logo_head2">bot</p>
       </div>
@@ -28,7 +28,7 @@
 import Button from "primevue/button";
 import { inject } from "vue";
 
-const props = defineProps(['is'])
+const props = defineProps(['was'])
 
 const buttonClick = inject("clicker");
 </script>
