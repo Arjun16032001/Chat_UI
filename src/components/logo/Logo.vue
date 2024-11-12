@@ -19,19 +19,10 @@
 import { defineProps } from 'vue';
 
 const props = defineProps(['logo'])
+
+
 </script>
-
 <style>
-.heading {
-  margin-left: 10px;
-  margin-top: 5px;
-}
-
-.top {
-  display: flex;
-  margin-left: 24px;
-  margin-top: 24px;
-}
 .logo_head {
   font-family: Public Sans;
   font-size: 19.77px;
@@ -46,5 +37,15 @@ const props = defineProps(['logo'])
   font-weight: 300;
   line-height: 14.83px;
   margin: 0;
+}
+.heading {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.top {
+  display: flex;
+  margin-left: 24px;
+  margin-top: 24px;
 }
 </style>
