@@ -1,6 +1,6 @@
 <template>
 
-    <div class="column h-full relative" :style="{
+    <div class="column h-full relative transition-width" :style="{
         width: was ? '276px' : '100px'
     }">
         <Logo_head :was="was" />
@@ -124,5 +124,8 @@ provide('clicker', toggle)
     margin-top: 25px;
     margin-bottom: 25px; */
 
+}
+.transition-width {
+  transition: width 0.5s ease; /* Adjust timing and easing as needed */
 }
 </style>

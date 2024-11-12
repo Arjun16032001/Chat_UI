@@ -11,7 +11,7 @@
         <h2 class="logo_head">CHAT</h2>
         <p class="logo_head2">bot</p>
       </div>
-      <div class="absolute right-[-15px] top-[20px] bg-white rounded-2xl" :class="{'right-[30px]': props.is}">
+      <div class="absolute right-[-15px] top-[20px] bg-white rounded-2xl" :class="{'right-[30px]': props.was}">
         <Button
           icon="pi pi-bars"
           severity="help"

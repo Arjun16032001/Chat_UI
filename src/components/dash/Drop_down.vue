@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="flex flex-col justify gap-2 bg-[#3517B4] pt-[7.37px] pl-[7.37px] pr-[7.37px] pb-[7.37px] rounded-[10px] w-[302px] h-fit">
         <button @click="closeDrop" class="pi pi-times text-left" style="color: white;"></button>
         <p class="text-white">Create</p>
@@ -39,4 +39,4 @@ import { inject } from 'vue';
 
 const closeDrop = inject('close')
 
-</script> -->
+</script>
