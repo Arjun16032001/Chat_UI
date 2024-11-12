@@ -1,6 +1,6 @@
 <template>
 
-    <div class="column h-full relative transition-width" :style="{
+    <div class="column h-full relative" :style="{
         width: was ? '276px' : '100px'
     }">
         <Logo_head :was="was" />
@@ -18,12 +18,12 @@
                     </select>
                 </div>
                 <Search :class="was ? 'w-full' : 'w-[10px]'" />
-                <p class="text-gray-500">Home</p>
+                <p class="text-gray-500" v-if="was">Home</p>
                 <Sbcard :label="was ? 'Chatbots' : ''" :class="was? 'w-[full]':'w-[44px]'" />
 
                 <div class="mt-[159px] mb-[15px] border-t w-full">
-                    <p class="text-[14px] text-gray-500 pl-[11px] absolute top-[355px] left-[8px]"
-                        :class="was ? 'top-[435px] left-[8px]' : 'top-[435px] left-[-5px]'">Preferences</p>
+                    <p class="text-[14px] text-gray-500 pl-[11px] absolute top-[435px] left-[8px]"
+                    v-if="was">Preferences</p>
                     <Button :pt="{
                         //   root: '!bg-red-500 !border-blue-500',
                         label: 'text-[14px] text-black',
@@ -69,6 +69,7 @@ import Button from 'primevue/button';
 import ToggleSwitch from 'primevue/toggleswitch';
 import { inject, provide, ref } from 'vue';
 import Logo_head from '../logo/Logo_head.vue';
+import Logo from '../logo/Logo.vue';
 
 
 const was = ref(true)
