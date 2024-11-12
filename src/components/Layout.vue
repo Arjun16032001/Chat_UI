@@ -32,7 +32,7 @@
 </template>
 <script setup>
 import Sidebar from './menu/Sidebar.vue';
-import Dash from './dash/Dash.vue';
+import Dash from './pages/dash/Dash.vue';
 import { provide, ref } from 'vue';
 
 

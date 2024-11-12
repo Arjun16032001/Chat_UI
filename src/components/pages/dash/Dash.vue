@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import Search from '../menu/Search.vue';
+import Search from '@/components/menu/Search.vue';
 import Create_bot from './Create_bot.vue';
 import Bots from './Bots.vue';
 // import Drop_down from './Drop_down.vue';

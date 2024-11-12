@@ -4,12 +4,13 @@
       <img
         src="\src\assets\Objects.png"
         alt=""
+        :style="imgStyle"
       />
     </div>
     <div class="heading flex flex-row">
       <div v-if="props.logo">
-        <h2 class="logo_head">CHAT</h2>
-        <p class="logo_head2">bot</p>
+        <h2 class="logo_head" :style="textStyleh">CHAT</h2>
+        <p class="logo_head2" :style="textStylep">bot</p>
       </div>
     </div>
     
@@ -17,8 +18,21 @@
 </template>
 <script setup>
 import { defineProps } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
 
 const props = defineProps(['logo'])
+
+const imgStyle = route.path.includes('/login') ? { height: '39.5px', width: '55.3px' } : 
+                 route.path.includes('/') ? {height: '32.54px', width: '45.56px' } : {};
+
+const textStyleh = route.path.includes('/login') ? { color: '#7152F3', fontSize:'24px' } : 
+route.path.includes('/') ? { color: 'black'  } : {};
+
+const textStylep = route.path.includes('/login') ? { color: '#7152F3', fontSize:'19px',lineHeight:'26px' } : 
+route.path.includes('/') ? { color: 'black'  } : {};
+
 
 
 </script>
