@@ -1,5 +1,5 @@
 <template>
-   <button class="bg-white border-[#A2A1A833] border-[2px] w-[190px] h-[120px] rounded-[10px] pl-[10px] pt-[10px] text-left" >
+   <button class="bg-white border-[#A2A1A833] border-[2px] w-[190px] h-[120px] rounded-[10px] pl-[10px]  text-left" >
     <div class="mb-[1px] overflow-hidden" >
         <div class="flex flex-row justify-between relative">
         <p class="font-['lexend'] ">Website Bot</p>

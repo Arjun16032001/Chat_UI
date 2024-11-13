@@ -4,7 +4,7 @@
                 <p class="text-[20px] font-[600]">Chat Bot</p>
                 <Search class="ml-[30px]" />
             </div>
-        <div class="flex overflow-auto h-[140px] flex-wrap gap-5">
+        <div class="flex overflow-auto h-full flex-wrap gap-5">
             <div class="relative">
                 <Create_bot />
                 <!-- <Drop_down v-if="show_drop" class="absolute top-0 z-[100]" /> -->

@@ -31,24 +31,24 @@
             <button class="flex flex-row w-fil bg-[#4F31D0] rounded-[10px] p-[5px] gap-3 justify-center">
                 <i class="pi pi-plus-circle !text-[25px] mt-[18px]" style="color: white;"></i>
                 <div class="flex flex-col text-left">
-                    <p class="text-white text-[16px]">Blank Bot</p>
-                    <p class="text-white text-[12px]">Create a blank chatbot, which you can train and customize later
+                    <p class="text-white text-[16px]">Website</p>
+                    <p class="text-white text-[12px]">Crawl your website’s content to get answers to popular user questions
+                    </p>
+                </div>
+            </button>
+            <button @click="goFaq" class="flex flex-row w-fil bg-[#4F31D0] rounded-[10px] p-[5px] gap-3 justify-center">
+                <i class="pi pi-question-circle !text-[25px] mt-[18px]" style="color: white;"></i>
+                <div class="flex flex-col text-left">
+                    <p class="text-white text-[16px]">FAQ Bot</p>
+                    <p class="text-white text-[12px]">Answer Frequently asked questions with a chatbot and save time
                     </p>
                 </div>
             </button>
             <button class="flex flex-row w-fil bg-[#4F31D0] rounded-[10px] p-[5px] gap-3 justify-center">
                 <i class="pi pi-plus-circle !text-[25px] mt-[18px]" style="color: white;"></i>
                 <div class="flex flex-col text-left">
-                    <p class="text-white text-[16px]">Blank Bot</p>
-                    <p class="text-white text-[12px]">Create a blank chatbot, which you can train and customize later
-                    </p>
-                </div>
-            </button>
-            <button class="flex flex-row w-fil bg-[#4F31D0] rounded-[10px] p-[5px] gap-3 justify-center">
-                <i class="pi pi-plus-circle !text-[25px] mt-[18px]" style="color: white;"></i>
-                <div class="flex flex-col text-left">
-                    <p class="text-white text-[16px]">Blank Bot</p>
-                    <p class="text-white text-[12px]">Create a blank chatbot, which you can train and customize later
+                    <p class="text-white text-[16px]">Customer service Bot</p>
+                    <p class="text-white text-[12px]">Answer popular customer questions 24/7
                     </p>
                 </div>
             </button>
@@ -61,12 +61,21 @@ import 'primeicons/primeicons.css'
 import { Popover } from 'primevue';
 import { inject } from 'vue';
 import { ref } from "vue";
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const op = ref();
 const toggle = (event) => {
     op.value.toggle(event);
 }
 // const dropDown = inject('drop')
+
+function goFaq(){
+    router.push('/faq')
+
+}
+
 
 </script>
 <style scoped>

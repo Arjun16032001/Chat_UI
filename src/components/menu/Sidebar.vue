@@ -73,7 +73,7 @@ import Logo_head from '../logo/Logo_head.vue';
 import Logo from '../logo/Logo.vue';
 
 
-const was = ref(true)
+const was = ref(false)
 function toggle() {
     was.value = !was.value
 }
