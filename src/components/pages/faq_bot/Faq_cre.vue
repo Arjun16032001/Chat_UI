@@ -7,7 +7,7 @@
       <div class="flex flex-row">
         <Customiser />
         <div 
-          class="flex flex-col justify-between border-[1px] border-[#DEDEDE] rounded-[10px] ml-[45px] items-center pt-[14.5px]"
+          class="flex flex-col justify-between px-[20px] border-[1px] border-[#DEDEDE] rounded-[10px] ml-[45px] items-center pt-[14.5px]"
         >
         <Faq_cre2 v-if="show_cre2" />
         <div v-if="show_first" class="flex flex-col gap-[123.76px]">
@@ -30,12 +30,13 @@
         </div>
           <div class="border-t-[1px] border-[#DEDEDE] w-full flex flex-row justify-between px-[15px]">
             <div class="flex flex-row py-[10px] ">
-                <button class="bg-[#A3D139] text-[16px] font-[500] text-white px-[13.5px] py-[8px] rounded-[10px]">Test Bot</button>
+                <button @click="visible = true" class="bg-[#A3D139] text-[16px] font-[500] text-white px-[13.5px] py-[8px] rounded-[10px]">Test Bot</button>
             </div>
             <div class="flex flex-row py-[10px] pl-[15px] gap-2">
                 <button class="bg-white text-[16px] font-[500] text-black px-[13.5px] py-[8px] rounded-[10px] border-[1px] border-[#DEDEDE]">Cancel</button>
                 <button class="bg-[#7152F3] text-[16px] font-[500] text-white px-[13.5px] py-[8px] rounded-[10px] border-[1px] border-[#DEDEDE]">Next</button>
-
+                <Modalbot v-model:visible="visible" />
+                
             </div>
           </div>
         </div>
@@ -49,9 +50,14 @@ import Customiser from "@/components/crebot_customise/Customiser.vue";
 import Button from "primevue/button";
 import { ref } from "vue";
 import Faq_cre2 from "./Faq_cre2.vue";
+import Dialog from 'primevue/dialog';
+import Modalbot from "@/components/modal/Modalbot.vue";
+
 
 const show_first = ref(true)
 const show_cre2 = ref(false)
+
+const visible = ref(false);
 
 function goQues(){
    show_first.value = false

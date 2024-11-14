@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-between gap-[25px]">
+  <div class="flex flex-col  gap-[25px]">
     <div class="flex flex-row gap-4">
       <Button
         @click="backDash"
