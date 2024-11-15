@@ -25,7 +25,6 @@
         <div class="flex flex-col">
           <div class="flex flex-row gap-3">
             <div class="flex-[50%] w-full">
-              {{ title }}
               <Ques v-model:title="title"  />
             </div>
             <div class="mt-[7px] flex-[50%]">
@@ -33,13 +32,17 @@
             </div>
           </div><br>
         </div>
+
+
+
         <div class="w-full flex items-center justify-center">
-        <button class="flex flex-row gap-3 items-center">
+        <button @click="addmoreSub(question)" class="flex flex-row gap-3 items-center">
           <i class="pi pi-plus !text-[18px] !text-[#7152F3] " style="color: black;"></i>
           <p class="text-[#7152F3]">Add Sub Questions</p>
         </button>
         </div>
         
+        <RecursiveAccordion v-if="question.subQuestions" :questions="question.subQuestions" />
       </AccordionContent>
     </AccordionPanel>
   </Accordion>
@@ -51,11 +54,12 @@ import { inject, ref } from "vue";
 import "primeicons/primeicons.css";
 import Ques from "./Ques.vue";
 import Ans from "./Ans.vue";
-
+// import Acco from "./Acco.vue"
 import Accordion from "primevue/accordion";
 import AccordionPanel from "primevue/accordionpanel";
 import AccordionHeader from "primevue/accordionheader";
 import AccordionContent from "primevue/accordioncontent";
+import RecursiveAccordion from "./RecursiveAccordion.vue";
 
 
 
@@ -63,9 +67,19 @@ const title = defineModel('acco')
 
 const questions = inject('question')
 
+
+
 function delques(id) {
   questions.value = questions.value.filter(item => item.id !== id)  // Filter out the item with the matching id
   console.log('hi',questions.value)
+}
+
+
+function addmoreSub(question) {
+  if (!question.subQuestions) {
+    question.subQuestions = [];
+  }
+  question.subQuestions.push({ id: Date.now(), title: "", subQuestions: [] });
 }
 
 

@@ -1,8 +1,8 @@
 <template>
-  <div class="fixed top-[25px] left-[25px] right-[25px] bottom-[15px] flex">
-    <Sidebar />
+  <div class="flex">
+    <!-- <Sidebar /> -->
     <div
-      class="mx-[17px] bg-white border-1 rounded-[10px] p-[32.5px] h-full overflow-auto"
+      class=" bg-white border-1 rounded-[10px]  h-full overflow-auto"
     >
       <div class="flex flex-row">
         <Customiser />

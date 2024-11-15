@@ -35,16 +35,29 @@
 
     </div>
 </template>
-<script setup>
+<script>
 import Logo from '@/components/logo/Logo.vue';
 import InputText from 'primevue/inputtext';
 import IftaLabel from 'primevue/iftalabel';
 import Password from 'primevue/password';
 import Checkbox from 'primevue/checkbox';
 
-
-
-
+export default {
+    components: {
+        Logo,
+        InputText,
+        IftaLabel,
+        Password,
+        Checkbox
+    },
+    data() {
+        return {
+            checked: false,
+            email: "",
+            pass: ""
+        }
+    }
+}
 </script>
 
 <style >

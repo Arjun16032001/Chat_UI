@@ -21,7 +21,7 @@
             <Sidebar class="sidebar" />
         </div>
         <div class="flex-1 overflow-auto h-full mx-[17px] bg-white border-1 rounded-[10px] p-[32.5px] ">
-            <Dash />
+            <RouterView />
         </div>
     </div>
 
@@ -34,6 +34,7 @@
 import Sidebar from './menu/Sidebar.vue';
 import Dash from './pages/dash/Dash.vue';
 import { provide, ref } from 'vue';
+import { RouterView } from 'vue-router';
 
 
 
